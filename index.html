@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portal de Estudos Maçônicos — Fraternidade Universal Nº 7</title>
+<style>
+:root{--bg:#061321;--bg2:#0a1d31;--panel:#0d2237;--panel2:#102a42;--gold:#d7ad52;--gold2:#f1d58d;--text:#f4f0e7;--muted:#9eafc1;--line:#27425e;--ok:#5bd18b;--danger:#e76b6b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0%,#173553 0,#071522 42%,#040c15 100%);color:var(--text);font-family:Georgia,"Times New Roman",serif;min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.app{display:grid;grid-template-columns:255px 1fr;min-height:100vh}.side{background:rgba(4,13,22,.96);border-right:1px solid var(--line);padding:18px 12px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{text-align:center;border-bottom:1px solid var(--line);padding:8px 8px 18px}.brand .mark{font-size:48px;color:var(--gold)}.brand h1{font-size:17px;letter-spacing:2px;margin:4px 0;color:var(--gold2)}.brand p{font-size:11px;color:var(--muted);margin:5px 0}
+.nav{margin-top:16px}.nav button{width:100%;text-align:left;background:none;color:var(--muted);border:0;border-radius:8px;padding:11px 12px;margin:2px 0}.nav button:hover,.nav button.active{background:#123451;color:var(--text);box-shadow:inset 3px 0 0 var(--gold)}
+.section-label{font-size:10px;letter-spacing:2px;color:var(--gold);margin:18px 10px 6px}
+.semester{border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:18px;background:#091a2a}.semester b{font-size:11px}.stars{color:var(--gold);letter-spacing:3px;margin:7px 0}
+main{padding:22px 28px;max-width:1500px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:0 0 17px;margin-bottom:20px}.title h2{margin:0;font-size:28px}.title small{color:var(--gold);font-size:14px}.user{display:flex;align-items:center;gap:10px;color:var(--muted)}.avatar{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:20px}.badge{background:#b83e3e;color:#fff;border-radius:20px;padding:2px 7px;font:12px Arial}
+.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.panel{background:linear-gradient(145deg,rgba(16,42,66,.95),rgba(8,25,41,.96));border:1px solid var(--line);border-radius:13px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.panel h3{margin:0 0 8px;font-size:20px}.sub{color:var(--muted);font-size:13px;line-height:1.55}.hero{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center;background:linear-gradient(120deg,#0d2842,#081725);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px}.hero-left{display:flex;gap:20px;align-items:center}.degree-icon{width:90px;height:90px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:42px;color:var(--gold);background:#081a2b}.hero h1{font-size:34px;margin:0 0 8px}.hero p{margin:0;color:var(--muted);line-height:1.5}.statbox{border:1px solid var(--line);border-radius:12px;padding:16px;background:rgba(3,13,22,.35)}.ring{font-size:34px;color:var(--gold);font-weight:bold}.statrow{display:flex;justify-content:space-between;margin:9px 0;color:var(--muted);font-size:13px}.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);margin-bottom:16px;overflow:auto}.tabs button{white-space:nowrap;background:none;border:0;color:var(--muted);padding:12px 15px;border-bottom:2px solid transparent}.tabs button.active{color:var(--gold2);border-color:var(--gold)}
+.progress{height:9px;background:#182b3e;border-radius:8px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,#a77d29,#f0cf75);width:0}.pct{display:flex;justify-content:space-between;margin:8px 0 16px;font-size:13px}.lesson{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;width:100%;background:#0a1d30;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px;margin:7px 0;text-align:left}.lesson:hover{border-color:#6f5728}.num{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:bold}.lesson b{font-size:14px}.lesson small{display:block;color:var(--muted);margin-top:3px}.status{font-size:12px;color:var(--muted)}.done .status{color:var(--ok)}.locked{opacity:.55}.btn{background:linear-gradient(#e3bb62,#b88931);color:#111;border:0;border-radius:7px;padding:9px 13px;font-weight:bold}.btn.secondary{background:#0d2b47;color:var(--text);border:1px solid #355574}.actions{display:flex;gap:8px;flex-wrap:wrap}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}.quick button{background:#0a1d30;border:1px solid var(--line);border-radius:10px;padding:15px 8px;color:var(--text)}.quick span{display:block;font-size:22px;margin-bottom:6px}.cardline{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:13px 0}.cardline:last-child{border-bottom:0}.tag{font-size:10px;color:var(--gold);letter-spacing:1.5px}.input{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;background:#071726;color:var(--text);margin:6px 0}.notice{border-left:3px solid var(--gold);padding-left:13px;margin-top:10px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:grid;place-items:center;padding:20px;z-index:20}.modalbox{max-width:760px;width:100%;max-height:90vh;overflow:auto;background:#091b2d;border:1px solid var(--gold);border-radius:14px;padding:25px}.close{float:right;background:none;border:0;color:var(--muted);font-size:25px}.login{position:fixed;inset:0;background:radial-gradient(circle at 50% 20%,#173653,#030a11 70%);display:grid;place-items:center;z-index:50}.loginbox{width:min(480px,92vw);padding:30px;background:#081a2b;border:1px solid var(--gold);border-radius:15px;text-align:center}.loginbox .mark{font-size:60px;color:var(--gold)}.loginbox h1{font-size:25px;margin:5px}.loginbox p{color:var(--muted);font-size:13px}.footer{text-align:center;color:#687c8f;font-size:11px;padding:30px}
+@media(max-width:900px){.app{grid-template-columns:1fr}.side{position:relative;height:auto}.nav{display:grid;grid-template-columns:repeat(2,1fr)}main{padding:15px}.grid,.hero{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:28px}}
+@media(max-width:560px){.nav{grid-template-columns:1fr}.topbar{align-items:flex-start;gap:10px}.grid3{grid-template-columns:1fr}.quick{grid-template-columns:1fr 1fr}.lesson{grid-template-columns:42px 1fr auto}.degree-icon{width:70px;height:70px;font-size:32px}}
+</style>
+</head>
+<body>
+
+<div id="login" class="login">
+  <div class="loginbox">
+    <div class="mark">⚜</div>
+    <h1>FRATERNIDADE UNIVERSAL Nº 7</h1>
+    <p>Portal de Estudos Maçônicos</p>
+    <input id="loginEmail" class="input" type="email" placeholder="E-mail do Ir∴">
+    <input id="loginPassword" class="input" type="password" placeholder="Senha">
+    <input id="semesterWord" class="input" type="password" placeholder="Palavra Semestral">
+    <button class="btn" style="width:100%;margin-top:8px" onclick="enterPortal()">ENTRAR NO PORTAL</button>
+    <p>Protótipo de testes. Na publicação, a autenticação deverá usar servidor, banco de dados e HTTPS.</p>
+  </div>
+</div>
+
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="mark">⚜</div><h1>FRATERNIDADE UNIVERSAL Nº 7</h1><p>PORTAL DE ESTUDOS MAÇÔNICOS</p></div>
+  <div class="nav">
+    <div class="section-label">PORTAL</div>
+    <button data-view="home" onclick="showView('home')">🏠 Início</button>
+    <button data-view="degrees" onclick="showView('degrees')">🎓 Graus Maçônicos</button>
+    <button data-view="library" onclick="showView('library')">📖 Biblioteca</button>
+    <button data-view="profile" onclick="showView('profile')">👤 Meu Perfil</button>
+    <button data-view="notes" onclick="showView('notes')">🗒️ Minhas Anotações</button>
+    <button data-view="agenda" onclick="showView('agenda')">📅 Agenda</button>
+    <button data-view="class" onclick="showView('class')">👥 Minha Turma</button>
+    <button data-view="notifications" onclick="showView('notifications')">🔔 Notificações <span id="navBadge" class="badge">3</span></button>
+    <button data-view="lodge" onclick="showView('lodge')">🏛️ Nossa Loja</button>
+    <button data-view="admin" onclick="showView('admin')">🔐 Administração</button>
+  </div>
+  <div class="semester"><b>PALAVRA SEMESTRAL</b><div class="stars">★★★★★</div><button class="btn secondary" style="width:100%" onclick="alert('Na versão online, a alteração será restrita à administração.')">ALTERAR</button></div>
+</aside>
+
+<main>
+<div class="topbar"><div class="title"><h2 id="pageTitle">Jornada de Estudos</h2><small id="pageSubtitle">Aprendiz Maçom · 33 aulas</small></div><div class="user"><span id="userName">Ir∴ Estudante</span><div class="avatar">♙</div><span class="badge">3</span></div></div>
+
+<section id="home" class="view active">
+  <div class="hero">
+    <div class="hero-left"><div class="degree-icon">⚜</div><div><div class="tag">GRAU 1</div><h1>Aprendiz Maçom</h1><p>A jornada fundamental de estudos da Fraternidade Universal Nº 7. Avance aula por aula, faça as avaliações e conclua sua formação.</p></div></div>
+    <div class="statbox"><div class="tag">SEU PROGRESSO NO GRAU</div><div class="ring" id="homePct">0%</div><div class="statrow"><span>Aulas concluídas</span><b id="homeCount">0 / 33</b></div><div class="statrow"><span>Avaliações</span><b id="homeEval">0 / 33</b></div><div class="statrow"><span>Revisão Final</span><b>Pendente</b></div><button class="btn secondary" style="width:100%" onclick="showView('profile')">VER MEU PROGRESSO</button></div>
+  </div>
+  <div class="tabs"><button class="active" onclick="openDegree('Aprendiz Maçom')">TRILHA DE ESTUDOS</button><button onclick="showView('library')">BIBLIOTECA</button><button onclick="showView('notifications')">AVISOS</button><button onclick="showView('profile')">CERTIFICAÇÃO</button></div>
+  <div class="grid">
+    <div class="panel"><h3>TRILHA DE ESTUDOS — 33 AULAS</h3><p class="sub">As aulas são liberadas progressivamente. Conclua a etapa atual para liberar a próxima.</p><div class="progress"><div id="homeBar" class="bar"></div></div><div class="pct"><span id="homeProgress">0 de 33 aulas concluídas</span><span id="homePercent">0%</span></div><div id="homeLessons"></div><button class="btn secondary" style="width:100%;margin-top:8px" onclick="openDegree('Aprendiz Maçom')">VER TODAS AS 33 AULAS →</button></div>
+    <div>
+      <div class="panel"><div class="tag">PRÓXIMA AULA</div><h3 id="nextTitle">Introdução ao estudo maçônico</h3><p class="sub">Continue exatamente de onde você parou.</p><button class="btn" onclick="continueStudy()">CONTINUAR AULA →</button></div>
+      <div class="panel" style="margin-top:15px"><div class="tag">SEU DESEMPENHO</div><h3 id="performance">Em andamento</h3><p class="sub">O desempenho detalhado será formado conforme as avaliações forem concluídas.</p></div>
+      <div class="panel" style="margin-top:15px"><div class="tag">MENSAGEM DA LOJA</div><div class="notice">“O conhecimento é o caminho do aperfeiçoamento.”<br><br><span class="sub">V∴M∴</span></div></div>
+    </div>
+  </div>
+  <div class="quick">
+    <button onclick="showView('library')"><span>📖</span>Biblioteca</button><button onclick="showView('degrees')"><span>🎓</span>Trilhas</button><button onclick="showView('profile')"><span>🏆</span>Certificados</button><button onclick="showView('agenda')"><span>📅</span>Agenda</button>
+  </div>
+</section>
+
+<section id="degrees" class="view">
+  <div class="panel"><div class="tag">PROGRAMA DE FORMAÇÃO</div><h3>Trilhas por Grau</h3><p class="sub">Selecione o grau para abrir sua jornada de estudos.</p><div class="grid3" style="margin-top:15px" id="degreeCards"></div></div>
+</section>
+
+<section id="profile" class="view">
+  <div class="grid"><div class="panel"><div class="tag">PERFIL DO IR∴</div><h3 id="profileName">Ir∴ Estudante</h3><p class="sub" id="profileEmail">Conta de demonstração</p><div class="cardline"><span>Grau atual</span><b>Aprendiz Maçom</b></div><div class="cardline"><span>Jornada</span><b id="profileJourney">0 / 33</b></div><div class="cardline"><span>Certificado</span><b id="profileCert">Pendente</b></div></div><div class="panel"><div class="tag">PROGRESSO</div><h3 id="profilePct">0%</h3><div class="progress"><div id="profileBar" class="bar"></div></div><p class="sub">Complete a jornada para habilitar a revisão final e o certificado.</p></div></div>
+  <div class="grid3" style="margin-top:15px"><div class="panel"><h3>⭐ Favoritos</h3><p class="sub">Aulas marcadas para revisão.</p></div><div class="panel"><h3>📝 Avaliações</h3><p class="sub">Acompanhe seu desempenho por aula.</p></div><div class="panel"><h3>💼 Solicitação</h3><p class="sub">Após a conclusão, esta área poderá receber a solicitação de análise de aumento de salário.</p></div></div>
+</section>
+
+<section id="notes" class="view"><div class="panel"><div class="tag">ÁREA PESSOAL</div><h3>Minhas Anotações</h3><textarea id="notesText" class="input" rows="14" placeholder="Escreva seus apontamentos de estudo..."></textarea><button class="btn" onclick="saveNotes()">SALVAR ANOTAÇÕES</button><span id="notesStatus" class="sub" style="margin-left:10px"></span></div></section>
+
+<section id="library" class="view"><div class="grid"><div class="panel"><div class="tag">BIBLIOTECA DA LOJA</div><h3>📖 Biblioteca Maçônica</h3><input id="librarySearch" class="input" placeholder="Pesquisar na biblioteca..." oninput="filterLibrary()"><div id="libraryItems"></div></div><div class="panel"><div class="tag">POR GRAU</div><h3>Acesso rápido</h3><div class="actions"><button class="btn" onclick="openDegree('Aprendiz Maçom')">Aprendiz</button><button class="btn secondary" onclick="openDegree('Companheiro Maçom')">Companheiro</button><button class="btn secondary" onclick="openDegree('Mestre Maçom')">Mestre</button></div></div></div></section>
+
+<section id="agenda" class="view"><div class="grid"><div class="panel"><div class="tag">AGENDA DA LOJA</div><h3>📅 Agenda de Estudos</h3><div id="events"></div></div><div class="panel"><div class="tag">PRÓXIMO ENCONTRO</div><h3>Estudo individual</h3><p class="sub">Continue sua jornada sempre que estiver disponível.</p></div></div></section>
+
+<section id="class" class="view"><div class="grid"><div class="panel"><div class="tag">COMUNIDADE DE ESTUDO</div><h3>👥 Minha Turma</h3><p class="sub">Espaço para acompanhamento da turma, encontros e orientação.</p><div class="cardline"><span>Grupo</span><b>Aprendizes</b></div><div class="cardline"><span>Programa</span><b>33 aulas</b></div></div><div class="panel"><div class="tag">ACOMPANHAMENTO</div><h3 id="classProgress">0%</h3><p class="sub">Seu progresso individual dentro da jornada.</p></div></div></section>
+
+<section id="notifications" class="view"><div class="panel"><div class="tag">COMUNICAÇÕES</div><h3>🔔 Notificações</h3><div class="cardline"><span>📚 Portal</span><b>Continue sua jornada de estudos.</b></div><div class="cardline"><span>🏛️ Loja</span><b>Acompanhe a agenda e os avisos.</b></div><div class="cardline"><span>🏆 Certificação</span><b>O certificado será habilitado após os requisitos.</b></div></div></section>
+
+<section id="lodge" class="view"><div class="panel"><div class="tag">IDENTIDADE DA LOJA</div><h3>🏛️ Fraternidade Universal Nº 7</h3><p class="sub">Área institucional da Loja: identidade, história, documentos, programação e comunicados.</p></div></section>
+
+<section id="admin" class="view"><div class="panel"><div class="tag">ÁREA ADMINISTRATIVA</div><h3>🔐 Painel da Loja</h3><p class="sub">Protótipo local para testes. Na versão publicada, esta área deverá exigir autenticação administrativa separada.</p><div class="grid3" style="margin-top:15px"><div class="panel"><b id="adminLessons">61</b><p class="sub">Aulas planejadas</p></div><div class="panel"><b>3</b><p class="sub">Graus</p></div><div class="panel"><b>0</b><p class="sub">Ir∴ cadastrados no protótipo</p></div></div><div class="panel" style="margin-top:15px"><h3>Controle de conteúdo</h3><p class="sub">Aqui serão administrados usuários, graus, aulas, avaliações, Palavra Semestral, biblioteca, agenda, avisos e solicitações.</p></div></div></section>
+
+<section id="degreeView" class="view">
+  <div class="hero"><div class="hero-left"><div class="degree-icon">⚜</div><div><div class="tag" id="degreeTag">GRAU</div><h1 id="degreeTitle">Aprendiz Maçom</h1><p id="degreeDesc">Programa de estudos.</p></div></div><div class="statbox"><div class="tag">PROGRESSO</div><div class="ring" id="degreePct">0%</div><div class="statrow"><span>Aulas concluídas</span><b id="degreeCount">0 / 33</b></div><button class="btn secondary" onclick="showView('profile')">MEU PERFIL</button></div></div>
+  <div class="tabs"><button class="active">TRILHA DE ESTUDOS</button><button onclick="alert('As avaliações serão liberadas junto à jornada.')">AVALIAÇÕES</button><button onclick="alert('A revisão final será liberada após a conclusão da trilha.')">REVISÃO FINAL</button><button onclick="alert('A solicitação será habilitada após os requisitos.')">SOLICITAÇÃO DE AUMENTO</button></div>
+  <div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><div><h3 id="degreeLessonsTitle">Trilha de Estudos</h3><p class="sub">Aula atual liberada; as seguintes são desbloqueadas progressivamente.</p></div><input id="lessonSearch" class="input" style="max-width:280px;margin:0" placeholder="Buscar aula..." oninput="renderDegreeLessons()"></div><div id="degreeLessons"></div></div>
+</section>
+
+<div id="lessonModal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeLesson()">×</button><div class="tag" id="lessonTag"></div><h2 id="lessonTitle"></h2><p class="sub" id="lessonObjective"></p><div class="panel" style="margin:15px 0"><p id="lessonText" style="line-height:1.7"></p><p class="notice" id="lessonReflection"></p></div><div id="quizArea"><h3>Verificação de aprendizagem</h3><p class="sub">Para o protótipo, confirme que estudou o conteúdo antes de concluir a aula.</p><button class="btn" onclick="completeLesson()">MARCAR AULA COMO CONCLUÍDA</button></div></div></div>
+
+<footer class="footer">Portal de Estudos Maçônicos · Fraternidade Universal Nº 7 · Protótipo V33</footer>
+</main></div>
+
+<script>
+const curricula = {"Aprendiz Maçom": ["Introdução ao estudo maçônico", "História e tradição", "Princípios fundamentais", "A Loja e a fraternidade", "O Templo", "O Rito de Emulação", "As Três Grandes Luzes", "Esquadro e Compasso", "O Livro da Lei Sagrada", "As Colunas", "O Pavimento Mosaico", "A Orla Dentada", "As Luzes da Loja", "A Régua de 24 Polegadas", "O Malho", "O Cinzel", "A Pedra Bruta", "A Pedra Polida", "O Trabalho Maçônico", "O Aprendiz", "O silêncio", "A disciplina", "A fraternidade", "Os deveres do Maçom", "Moral e virtude", "Organização dos trabalhos", "Os cargos da Loja", "O Venerável Mestre", "Os Oficiais", "Abertura e encerramento", "Tradição e regularidade", "O caminho do Aprendiz", "Revisão da jornada"], "Companheiro Maçom": ["A passagem ao grau de Companheiro", "A busca do conhecimento", "As sete artes liberais", "Geometria e proporção", "Arquitetura e construção", "As colunas em aprofundamento", "O Templo em aprofundamento", "Trabalho e aperfeiçoamento", "A jornada do Companheiro", "Símbolos de aperfeiçoamento", "A linguagem simbólica", "Medida, ordem e equilíbrio", "Virtude e conhecimento", "Fraternidade e responsabilidade", "O Companheiro na Loja", "Tradição e instrução", "Aplicação dos princípios", "Reflexão e maturidade", "Preparação para o Mestrado", "Síntese dos estudos", "Revisão do Companheiro"], "Mestre Maçom": ["O Mestre e a responsabilidade maçônica", "A direção dos trabalhos", "Liderança e serviço", "Tradição, regularidade e responsabilidade", "A formação dos Irmãos", "A continuidade da Loja", "Síntese e compromisso do Mestre"]};
+const state = JSON.parse(localStorage.getItem("fu7_portal_state") || '{"progress":{"Aprendiz Maçom":0,"Companheiro Maçom":0,"Mestre Maçom":0},"name":"","email":"","notes":""}');
+let currentDegree = "Aprendiz Maçom", currentLesson = 1;
+
+function save(){localStorage.setItem("fu7_portal_state",JSON.stringify(state))}
+function enterPortal(){
+  const email=document.getElementById("loginEmail").value.trim(), pass=document.getElementById("loginPassword").value.trim(), word=document.getElementById("semesterWord").value.trim();
+  if(!email||!pass||!word){alert("Preencha e-mail, senha e Palavra Semestral para entrar no protótipo.");return}
+  state.email=email; state.name=email.split("@")[0]||"Ir∴ Estudante"; save();
+  document.getElementById("login").classList.add("hidden"); updateAll();
+}
+function showView(id){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  const el=document.getElementById(id); if(el) el.classList.add("active");
+  document.querySelectorAll(".nav button[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===id));
+  const titles={home:["Jornada de Estudos","Aprendiz Maçom · 33 aulas"],degrees:["Graus Maçônicos","Aprendiz · Companheiro · Mestre"],library:["Biblioteca Maçônica","Materiais e documentos da Loja"],profile:["Meu Perfil","Acompanhamento da jornada"],notes:["Minhas Anotações","Área pessoal de estudos"],agenda:["Agenda de Estudos","Programação e atividades"],class:["Minha Turma","Comunidade de estudo"],notifications:["Notificações","Avisos e comunicações"],lodge:["Nossa Loja","Fraternidade Universal Nº 7"],admin:["Administração","Controle do portal"],degreeView:[currentDegree,"Trilha de estudos"]};
+  const t=titles[id]||["Portal",""]; document.getElementById("pageTitle").textContent=t[0]; document.getElementById("pageSubtitle").textContent=t[1];
+  window.scrollTo(0,0);
+}
+function openDegree(degree){
+  currentDegree=degree; renderDegreeCards(); renderDegreeLessons(); showView("degreeView");
+  document.getElementById("pageTitle").textContent=degree; document.getElementById("pageSubtitle").textContent=curricula[degree].length+" aulas";
+}
+function continueStudy(){
+  const p=state.progress[currentDegree]||0; currentLesson=Math.min(p+1,curricula[currentDegree].length); openLesson(currentLesson);
+}
+function openLesson(n){
+  const list=curricula[currentDegree], p=state.progress[currentDegree]||0;
+  if(n>p+1){alert("Conclua a aula anterior primeiro.");return}
+  currentLesson=n; document.getElementById("lessonTag").textContent=currentDegree.toUpperCase()+" · AULA "+String(n).padStart(2,"0");
+  document.getElementById("lessonTitle").textContent=list[n-1];
+  document.getElementById("lessonObjective").textContent="Estudo orientado da aula. Leia, reflita e registre suas observações antes de concluir.";
+  document.getElementById("lessonText").textContent="Conteúdo desta aula: "+list[n-1]+". Na publicação, esta área receberá o material definitivo da Loja, com texto, documentos autorizados e recursos de estudo.";
+  document.getElementById("lessonReflection").textContent="Reflexão: que ensinamento desta aula pode ser aplicado ao aperfeiçoamento pessoal e à vida fraterna?";
+  document.getElementById("lessonModal").classList.remove("hidden");
+}
+function closeLesson(){document.getElementById("lessonModal").classList.add("hidden")}
+function completeLesson(){
+  const p=state.progress[currentDegree]||0;
+  if(currentLesson===p+1){state.progress[currentDegree]=currentLesson;save();closeLesson();updateAll();renderDegreeLessons();showView("degreeView")}
+}
+function renderDegreeLessons(){
+  const list=curricula[currentDegree], p=state.progress[currentDegree]||0, q=(document.getElementById("lessonSearch")?.value||"").toLowerCase();
+  document.getElementById("degreeTag").textContent="GRAU · "+currentDegree.toUpperCase();
+  document.getElementById("degreeTitle").textContent=currentDegree;
+  document.getElementById("degreeDesc").textContent=currentDegree==="Aprendiz Maçom"?"Fundamentos, símbolos, disciplina e jornada inicial.":currentDegree==="Companheiro Maçom"?"Aprofundamento, conhecimento, trabalho e preparação para o Mestrado.":"Liderança, responsabilidade, formação dos Irmãos e continuidade da Loja.";
+  document.getElementById("degreeLessonsTitle").textContent="TRILHA DE ESTUDOS — "+list.length+" AULAS";
+  document.getElementById("degreePct").textContent=Math.round(p/list.length*100)+"%"; document.getElementById("degreeCount").textContent=p+" / "+list.length;
+  document.getElementById("degreeLessons").innerHTML=list.map((title,i)=>{
+    const n=i+1, done=n<=p, unlocked=n<=p+1;
+    if(q&&!title.toLowerCase().includes(q)) return "";
+    return `<button class="lesson ${done?"done":""} ${!unlocked?"locked":""}" onclick="openLesson(${n})"><span class="num">${String(n).padStart(2,"0")}</span><span><b>${title}</b><small>${done?"Concluída":unlocked?"Disponível para estudo":"Bloqueada — conclua a aula anterior"}</small></span><span class="status">${done?"✓":unlocked?"▶":"🔒"}</span></button>`;
+  }).join("");
+}
+function renderDegreeCards(){
+  const icons={"Aprendiz Maçom":"⚜","Companheiro Maçom":"⚒","Mestre Maçom":"♛"};
+  document.getElementById("degreeCards").innerHTML=Object.entries(curricula).map(([d,list])=>{
+    const p=state.progress[d]||0, pct=Math.round(p/list.length*100);
+    return `<div class="panel"><div class="degree-icon" style="margin-bottom:12px">${icons[d]}</div><h3>${d}</h3><p class="sub">${list.length} aulas · jornada própria · avaliações · conclusão</p><div class="progress"><div class="bar" style="width:${pct}%"></div></div><p class="sub">${p}/${list.length} concluídas</p><button class="btn" onclick='openDegree(${JSON.stringify(d)})'>ENTRAR NA JORNADA →</button></div>`
+  }).join("");
+}
+function updateAll(){
+  const p=state.progress["Aprendiz Maçom"]||0, total=curricula["Aprendiz Maçom"].length, pct=Math.round(p/total*100);
+  document.getElementById("userName").textContent=state.name?("Ir∴ "+state.name):"Ir∴ Estudante";
+  document.getElementById("homePct").textContent=pct+"%"; document.getElementById("homeCount").textContent=p+" / "+total; document.getElementById("homeEval").textContent=p+" / "+total;
+  document.getElementById("homeProgress").textContent=p+" de "+total+" aulas concluídas"; document.getElementById("homePercent").textContent=pct+"%"; document.getElementById("homeBar").style.width=pct+"%";
+  document.getElementById("profileName").textContent=state.name?("Ir∴ "+state.name):"Ir∴ Estudante"; document.getElementById("profileEmail").textContent=state.email||"Conta de demonstração";
+  document.getElementById("profileJourney").textContent=p+" / "+total; document.getElementById("profilePct").textContent=pct+"%"; document.getElementById("profileBar").style.width=pct+"%"; document.getElementById("profileCert").textContent=p===total?"Disponível":"Pendente";
+  document.getElementById("classProgress").textContent=pct+"%"; document.getElementById("nextTitle").textContent=curricula["Aprendiz Maçom"][Math.min(p,total-1)];
+  const homeList=document.getElementById("homeLessons"); homeList.innerHTML=curricula["Aprendiz Maçom"].slice(0,6).map((t,i)=>{const n=i+1,done=n<=p,unlocked=n<=p+1;return `<button class="lesson ${done?"done":""} ${!unlocked?"locked":""}" onclick="openDegree('Aprendiz Maçom');setTimeout(()=>openLesson(${n}),50)"><span class="num">${String(n).padStart(2,"0")}</span><span><b>${t}</b><small>${done?"Concluída":unlocked?"Disponível para estudo":"Bloqueada"}</small></span><span class="status">${done?"✓":unlocked?"▶":"🔒"}</span></button>`}).join("");
+  renderDegreeCards(); renderLibrary(); renderEvents(); document.getElementById("notesText").value=state.notes||"";
+}
+function renderLibrary(){
+ const items=["📘 Apostilas de Estudos — materiais organizados por grau e tema.","📜 História da Loja — documentos e registros históricos da Fraternidade Universal Nº 7.","⚜️ Rito de Emulação — referências e materiais de apoio.","🔹 Simbolismo Maçônico — símbolos, ferramentas e linguagem simbólica.","📚 História da Maçonaria — material introdutório e referências autorizadas.","🏛️ Documentos da Loja — identidade, cartas e registros autorizados."];
+ const q=(document.getElementById("librarySearch")?.value||"").toLowerCase();
+ document.getElementById("libraryItems").innerHTML=items.filter(x=>!q||x.toLowerCase().includes(q)).map(x=>`<div class="cardline"><span>${x}</span><button class="btn secondary" onclick="alert('Este recurso será conectado ao arquivo definitivo na publicação.')">ABRIR</button></div>`).join("");
+}
+function filterLibrary(){renderLibrary()}
+function renderEvents(){document.getElementById("events").innerHTML='<div class="cardline"><span>📚 Estudo individual</span><b>Disponível</b></div><div class="cardline"><span>🏛️ Próxima reunião da Loja</span><b>Consultar administração</b></div>'}
+function saveNotes(){state.notes=document.getElementById("notesText").value;save();document.getElementById("notesStatus").textContent="✓ Salvo neste dispositivo."}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLesson()});
+updateAll();
+</script>
+</body>
+</html>
